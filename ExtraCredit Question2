@@ -1,0 +1,49 @@
+#define _CRT_SECURE_NO_DEPRECATE
+
+#include<stdio.h>
+
+int main()
+
+{
+
+int num, position,status;
+
+printf("Enter the number: ");
+
+scanf("%d", &num);
+
+printf("Enter the position: ");
+
+scanf("%d", &position);
+
+if (position < 0 || position > 31)
+
+{
+
+printf(" position must be in between 0 and 31, both inclusive\n");
+
+return -1;
+
+}
+
+//shift number nth time and bitwise and with 1 to check if it's set or not
+
+status = (num >> position) & 0x01;
+
+if (status)
+
+{
+
+printf("Bit in the position %d is set", position);
+
+}
+
+else
+
+{
+
+printf("Bit in the position %d is not set", position);
+
+}
+
+}
